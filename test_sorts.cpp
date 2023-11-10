@@ -13,6 +13,7 @@
 #include "test.h"
 #include <cassert>
 #include <string>
+#include <fstream> 
 
 using namespace std;
 
@@ -318,7 +319,7 @@ void test_quick_sort_string()
 
 void test_shell_sort_int()
 {
-    Test("test_shell_sort_int");
+    Test("test_shell_sort_int ");
     vector<int> v;
     assert(v.size() == 0);
     shell_sort(v);
@@ -427,6 +428,34 @@ int main()
 
     test_iquick_sort_int();
     test_iquick_sort_string();
+        ofstream outFile("sorting_results.csv ");
+
+    for (int i = 1; i <= 25; i++) {
+        int size = i * 2000;
+
+        vector<int> v1 = rand_vec(size, 1, size);
+        vector<int> v2 = rand_vec(size, 1, size);
+        vector<int> v3 = rand_vec(size, 1, size);
+        vector<int> v4 = rand_vec(size, 1, size);
+        vector<int> v5 = rand_vec(size, 1, size);
+        vector<int> v6 = rand_vec(size, 1, size);
+        vector<int> v7 = rand_vec(size, 1, size);
+        vector<int> v8 = rand_vec(size, 1, size);
+
+        // Sort each distinct vector and write results to file
+        outFile << bubble_sort(v1).to_csv() << endl;
+        outFile << insertion_sort(v2).to_csv() << endl;
+        outFile << selection_sort(v3).to_csv() << endl;
+        outFile << shell_sort(v4).to_csv() << endl;
+        outFile << merge_sort(v5).to_csv() << endl;
+        outFile << quick_sort(v6).to_csv() << endl;
+        outFile << iquick_sort(v7).to_csv() << endl;
+        outFile << priority_queue_sort(v8).to_csv() << endl;
+    }
+
+    outFile.close();
+    return 0;
+
 
     cout << "\nall sorting tests passed!" << endl;
 } // main
