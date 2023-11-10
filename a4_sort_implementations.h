@@ -95,7 +95,7 @@ Sort_stats insertion_sort(vector<T> &v)
     clock_t end = clock();
     double elapsed_cpu_time_sec = static_cast<double>(end - start) / CLOCKS_PER_SEC;
 
-    return Sort_stats{"insertion_sort",
+    return Sort_stats{"Insertion sort",
                       v.size(),
                       num_comps,
                       elapsed_cpu_time_sec};
@@ -128,7 +128,7 @@ Sort_stats selection_sort(vector<T> &v)
     }
     clock_t end = clock();
     double elapsed_cpu_time_sec = double(end - start) / CLOCKS_PER_SEC;
-    return Sort_stats{"Selection_sort",
+    return Sort_stats{"Selection sort",
                       v.size(),
                       num_comps,
                       elapsed_cpu_time_sec};
@@ -163,7 +163,7 @@ Sort_stats shell_sort(vector<T> &v)
     }
     clock_t end = clock();
     double elapsed_cpu_time_sec = double(end - start) / CLOCKS_PER_SEC;
-    return Sort_stats{"Shell_sort",
+    return Sort_stats{"Shell sort",
                       v.size(),
                       num_comps,
                       elapsed_cpu_time_sec};
@@ -238,7 +238,7 @@ Sort_stats merge_sort(vector<T> &v)
 
     clock_t end = clock();
     double elapsed_cpu_time_sec = double(end - start) / CLOCKS_PER_SEC;
-    return Sort_stats{"Merge_sort",
+    return Sort_stats{"Merge sort",
                       v.size(),
                       num_comps,
                       elapsed_cpu_time_sec};
@@ -362,7 +362,7 @@ Sort_stats iquick_sort(vector<T> &v)
     clock_t end = clock(); // Record the end time
     double elapsed_cpu_time_sec = double(end - start) / CLOCKS_PER_SEC;
 
-    return Sort_stats{"iquick sort",
+    return Sort_stats{"Iquick sort",
                       v.size(),
                       num_comps,
                       elapsed_cpu_time_sec};
